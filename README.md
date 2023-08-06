@@ -25,7 +25,7 @@ npm install puppeteer
 Install the `PuppeteerManager` class:
 
 ```bash
-npm install puppeteer-manager
+npm install puppet-manager
 ```
 
 ## Usage
@@ -108,6 +108,6 @@ Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) fi
 
 ## Support
 
-For any questions, bug reports, or feature requests, please [open an issue](https://github.com/4lbatr0s/puppeteer-manager/issues/new).
+For any questions, bug reports, or feature requests, please [open an issue](https://github.com/4lbatr0s/puppet-manager/issues/new).
 
 ```

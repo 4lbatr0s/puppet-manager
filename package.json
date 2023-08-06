@@ -1,6 +1,6 @@
 {
   "name": "puppet-manager",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A Puppeteer Manager to handle concurrent Puppeteer pages with a single browser instance.",
   "main": "PuppeteerManager.js",
   "scripts": {
@@ -13,6 +13,7 @@
   "keywords": [
     "puppeteer",
     "puppeteer-manager",
+    "puppet-manager",
     "concurrent",
     "browser",
     "automation"
