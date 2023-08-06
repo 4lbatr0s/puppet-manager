@@ -31,8 +31,7 @@ npm install puppeteer-manager
 ## Usage
 
 ```javascript
-const PuppeteerManager = require('puppeteer-manager');
-
+import PuppeteerManager from 'puppeteer-manager';
 // Create a PuppeteerManager instance with a concurrency of 3
 const concurrency = 3;
 const manager = new PuppeteerManager(concurrency);
