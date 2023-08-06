@@ -1,0 +1,29 @@
+{
+  "name": "puppeteer-manager",
+  "version": "1.0.0",
+  "description": "A Puppeteer Manager to handle concurrent Puppeteer pages with a single browser instance.",
+  "main": "PuppeteerManager.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/puppeteer-manager.git"
+  },
+  "keywords": [
+    "puppeteer",
+    "puppeteer-manager",
+    "concurrent",
+    "browser",
+    "automation"
+  ],
+  "author": "4lbatr0s serhatoner@protonmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^21.0.1"
+  },
+  "devDependencies": {
+    "jest": "^29.6.2"
+  },
+  "type": "module"
+}
