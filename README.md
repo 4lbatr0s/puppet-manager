@@ -1,4 +1,3 @@
-```markdown
 # Puppeteer Manager
 
 A Puppeteer Manager to handle concurrent Puppeteer pages with a single browser instance.
