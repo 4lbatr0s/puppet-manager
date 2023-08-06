@@ -1,5 +1,5 @@
 {
-  "name": "puppeteer-manager",
+  "name": "puppet-manager",
   "version": "1.0.0",
   "description": "A Puppeteer Manager to handle concurrent Puppeteer pages with a single browser instance.",
   "main": "PuppeteerManager.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/puppeteer-manager.git"
+    "url": "https://github.com/4lbatr0s/puppet-manager.git"
   },
   "keywords": [
     "puppeteer",
