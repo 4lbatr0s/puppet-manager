@@ -42,10 +42,10 @@ class PuppeteerManager {
   async initialize() {
     if (!this.browser) {
       this.browser = await puppeteer.launch(this.puppeteerOptions);
-      this.pages = await Promise.all(
-        Array.from({ length: this.concurrency }, () => this.browser.newPage())
-      );
     }
+    this.pages = await Promise.all(
+      Array.from({ length: this.concurrency }, () => this.browser.newPage())
+    );
   }
 
   /**
