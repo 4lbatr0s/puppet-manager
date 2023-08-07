@@ -109,4 +109,8 @@ Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) fi
 
 For any questions, bug reports, or feature requests, please [open an issue](https://github.com/4lbatr0s/puppet-manager/issues/new).
 
+## TODOS
+1. Include TypeScript type definitions.
+2. Include default browser configurations for a better performance.
+3. Create consistency with naming.
 ```
