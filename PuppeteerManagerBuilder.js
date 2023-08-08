@@ -1,7 +1,7 @@
 import puppeteer from "puppeteer";
-import ConfigurationSolver from "./ConfigurationSolver";
-import BrowserNotFound from "./errors/BrowserNotFound/error";
-import ConfigNotFoundError from "./errors/config/ConfigNotFoundError/error";
+import ConfigurationSolver from "./ConfigurationSolver.js";
+import BrowserNotFound from "./errors/BrowserNotFound/error.js";
+import ConfigNotFoundError from "./errors/config/ConfigNotFoundError/error.js";
 
 /**
  * A Puppeteer Manager to handle concurrent puppeteer pages with a single browser instance.
