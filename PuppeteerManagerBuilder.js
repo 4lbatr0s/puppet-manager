@@ -158,7 +158,7 @@ class PuppeteerManagerBuilder {
    * @private
    * Creates an instance of PuppeteerManager.
    */
-  build(){
+  static build(){
     if(!this.config){
       throw new ConfigNotFoundError();
     }
