@@ -30,10 +30,8 @@ npm install puppet-manager
 ## Usage
 
 ```javascript
-import PuppeteerManager from 'puppet-manager';
-// Create a PuppeteerManager instance with a concurrency of 3
-const concurrency = 3;
-const manager = new PuppeteerManager(concurrency);
+const PuppeteerManagerBuilder = require('puppet-manager/PuppeteerManagerBuilder');
+const ConfigurationNames = require('./ConfigurationNames');
 
 async function batchJob(page, url) {
   // Your batch job logic goes here using the 'page'
@@ -50,15 +48,43 @@ async function main() {
   ];
 
   try {
-    await manager.initialize(); // Optional: Initialize the manager with the browser and pages
-    const results = await manager.runBatchJobs(batchUrls, batchJob);
-    console.log(results); // Array of results from your batch jobs
+    const builder = new PuppeteerManagerBuilder();
+
+    // Use a predefined configuration using the enum value
+    const managerWithBuiltInConfig = builder
+      .useConfig(ConfigurationNames.Config1)
+      .build();
+
+    const resultsBuiltInConfig = await managerWithBuiltInConfig.runBatchJobs(batchUrls, batchJob);
+    console.log('Results from predefined config:', resultsBuiltInConfig);
+
+    // Use a custom configuration using setCustomConfig
+    const customConfig = {
+      headless: true,
+      ignoreHTTPSErrors: true,
+      defaultViewport: { width: 1280, height: 720 },
+      userDataDir: './custom-user-data',
+      args: ['--disable-notifications'],
+    };
+
+    const managerWithCustomConfig = builder
+      .setCustomConfig(customConfig)
+      .build();
+
+    const resultsCustomConfig = await managerWithCustomConfig.runBatchJobs(batchUrls, batchJob);
+    console.log('Results from custom config:', resultsCustomConfig);
   } finally {
-    await manager.close(); // Close the manager to release resources
+    if (managerWithBuiltInConfig) {
+      await managerWithBuiltInConfig.close();
+    }
+    if (managerWithCustomConfig) {
+      await managerWithCustomConfig.close();
+    }
   }
 }
 
 main();
+
 ```
 
 ## API Reference
