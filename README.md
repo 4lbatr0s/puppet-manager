@@ -139,4 +139,5 @@ For any questions, bug reports, or feature requests, please [open an issue](http
 1. Include TypeScript type definitions.
 2. Include default browser configurations for a better performance.
 3. Create consistency with naming.
+4. <s>Fix initialize method page-reopening problem</s>.
 ```
