@@ -42,6 +42,7 @@ class PuppeteerManagerBuilder {
    */
   useConfig(configName) {
     this.config = ConfigurationSolver.getConfig(configName);
+    return this;
   }
 
   /**
@@ -50,6 +51,7 @@ class PuppeteerManagerBuilder {
    */
   setCustomConfig(config) {
     this.config = config;
+    return this;
   }
 
   /**
