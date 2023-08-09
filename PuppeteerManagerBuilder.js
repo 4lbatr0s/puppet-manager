@@ -72,10 +72,28 @@ class PuppeteerManagerBuilder {
    * @private
    */
   async close() {
-    await Promise.all(this.pages.map((page) => page.close()));
+    if (this?.pages.length >= 1) {
+      await Promise.all(
+        this.pages.map(async (page) => {
+          try {
+            if (!page.isClosed()) {
+              await page.close();
+            }
+          } catch (error) {
+            // Handle the error if the page couldn't be closed
+            console.error("Error while closing page:", error);
+          }
+        })
+      );
+    }
     this.pages = [];
-    if (this.browser) {
-      await this.browser.close();
+    if (this?.browser) {
+      try {
+        await this.browser.close();
+      } catch (error) {
+        // Handle the error if the browser couldn't be closed
+        console.error("Error while closing browser:", error);
+      }
       this.browser = null;
     }
   }
@@ -160,8 +178,8 @@ class PuppeteerManagerBuilder {
    * @private
    * Creates an instance of PuppeteerManager.
    */
-  build(){
-    if(!this.config){
+  build() {
+    if (!this.config) {
       throw new ConfigNotFoundError();
     }
     return new PuppeteerManagerBuilder(this.concurrency, this.config);
