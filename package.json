@@ -1,6 +1,6 @@
 {
   "name": "puppet-manager",
-  "version": "1.0.0",
+  "version": "1.0.8",
   "description": "A Puppeteer Manager to handle concurrent Puppeteer pages with a single browser instance.",
   "main": "PuppeteerManagerBuilder.js",
   "scripts": {
