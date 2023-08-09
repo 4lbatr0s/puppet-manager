@@ -1,4 +1,4 @@
-import Configurations from "./ConfigurationNames.js";
+import ConfigurationMapper from "./ConfigurationMapper.js";
 import ConfigNotFoundError from "./errors/config/ConfigNotFoundError/error.js";
 
 /**
@@ -11,7 +11,7 @@ class ConfigurationSolver {
    */
   static getConfig(configName) {
     try {
-      return Configurations[configName];
+      return ConfigurationMapper[configName];
     } catch (err) {
       throw new ConfigNotFoundError();
     }

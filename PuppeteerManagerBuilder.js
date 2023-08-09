@@ -54,6 +54,15 @@ class PuppeteerManagerBuilder {
     return this;
   }
 
+    /**
+   *
+   * @param {Object} concurrency - A method to set concurrency value.
+   */
+    setConcurrency(concurrency) {
+      this.concurrency = concurrency;
+      return this;
+    }
+
   /**
    * Initializes the PuppeteerManager with the browser and pages.
    * @private
