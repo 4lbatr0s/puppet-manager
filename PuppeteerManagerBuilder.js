@@ -76,9 +76,7 @@ class PuppeteerManagerBuilder {
       await Promise.all(
         this.pages.map(async (page) => {
           try {
-            if (!page.isClosed()) {
-              await page.close();
-            }
+            await this.closePage(page);
           } catch (error) {
             // Handle the error if the page couldn't be closed
             console.error("Error while closing page:", error);
@@ -103,7 +101,9 @@ class PuppeteerManagerBuilder {
    * @param {puppeteer.Page} page - A puppeteer page that has been created by initialize or runBatchJobs.
    */
   async closePage(page) {
-    await page.close();
+    if (!page.isClosed()) {
+      await page.close();
+    }
     const pageIndex = this.pages.indexOf(page);
     if (pageIndex !== -1) {
       this.pages.splice(pageIndex, 1);
