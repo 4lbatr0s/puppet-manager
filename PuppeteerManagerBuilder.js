@@ -73,16 +73,7 @@ class PuppeteerManagerBuilder {
    */
   async close() {
     if (this?.pages.length >= 1) {
-      await Promise.all(
-        this.pages.map(async (page) => {
-          try {
-            await this.closePage(page);
-          } catch (error) {
-            // Handle the error if the page couldn't be closed
-            console.error("Error while closing page:", error);
-          }
-        })
-      );
+      await this.closePages();
     }
     this.pages = [];
     if (this?.browser) {
@@ -128,8 +119,12 @@ class PuppeteerManagerBuilder {
    * @private
    */
   async closePages() {
-    await Promise.all(this.pages.map((page) => this.closePage(page)));
-    this.pages = [];
+    try {
+      await Promise.all(this.pages.map((page) => this.closePage(page)));
+      this.pages = [];
+    } catch (error) {
+      console.error("Error while closing browser:", error);
+    }
   }
 
   /**
